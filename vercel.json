@@ -1,24 +1,9 @@
 {
-  "rewrites": [
+  "version": 2,
+  "routes": [
     {
-      "source": "/ingest/static/:path*",
-      "destination": "https://us-assets.i.posthog.com/static/:path*"
-    },
-    {
-      "source": "/ingest/:path*",
-      "destination": "https://us.i.posthog.com/:path*"
-    }
-  ],
-
-  "headers": [
-    {
-      "source": "/ingest/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" }
-        
-      ]
+      "src": "/(.*)",
+      "dest": "https://us.i.posthog.com/$1"
     }
   ]
-
 }
